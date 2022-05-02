@@ -17,3 +17,14 @@ A cor #eee foi utilizada como de background por ser uma cor mais agradável aos 
 
 API do github [https://api.github.com/]
 Documentação da API  [https://docs.github.com/pt/rest]
+
+## PARA UTILIZAÇÃO
+
+Para procurar por repositório você deve colocar o nome_de_usuário/repositório.
+Por exemplo:
+alanfranciscos/githubAPI
+
+
+Para procurar por repositório você deve colocar o nome_de_usuário/repositório.
+Por exemplo:
+alanfranciscos

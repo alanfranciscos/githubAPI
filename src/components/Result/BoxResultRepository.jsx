@@ -4,29 +4,27 @@ import React, { useEffect, useState } from "react";
 import api from "../../pages/api/api"
 import ImageComponent from "../ImageComponent";
 
-
-
-
 export default function BoxResultRepository() {
 
     //search for value key in url
     const value = new URL(location.href).searchParams.get('value')
 
     //use states to change the variable.
-    const [user, setUser] = useState();
-    var param = `/users/${value}`
+    const [rep, setRep] = useState();
 
     //using and handling an api
     useEffect(() => {
-      api
-        .get(param)
-        .then((response) => setUser(response.data))
-        .catch((err) => {
-          console.error("ops! ocorreu um erro" + err);
-        });
-    }, []);
+        api
+          .get(`/repos/${value}`)
+          .then((response) =>
+              setRep(response.data))
+          .catch((err) => {
+            console.error("ops! ocorreu um erro" + err);
+          });
+      }, []);
+  
 
-    const image = user?.avatar_url
+    const image = rep?.owner.avatar_url
 
     return (
         <div className={styles.window}>
@@ -41,13 +39,23 @@ export default function BoxResultRepository() {
                     <ImageComponent url={image}/>
                     <div className={styles.info}>
                         <h2>USUÁRIO:</h2>
-                        <p>{user?.login}</p>
+                        <p>{rep?.owner.login}</p>
                     </div>
                     <div className={styles.info}>
                         <h2>REPOSITÓRIO:</h2>
-                        <p>{user?.repos_url}</p>
+                        <p>{rep?.name}</p>
                     </div>
                     <div className={styles.info}>
+                        <h2>STARS</h2>
+                        <p>{rep?.stargazers_count}</p>
+                    </div>
+                    <div className={styles.info}>
+                        <h2>FORKS</h2>
+                        <p>{rep?.forks}</p>
+                    </div>
+                    <div className={styles.info}>
+                        <h2>ISSUES ABERTAS</h2>
+                        <p>{rep?.open_issues_count}</p>
                     </div>
                 </div>
             </div>
