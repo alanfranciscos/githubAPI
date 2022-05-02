@@ -1,0 +1,40 @@
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    margin: 50px 50px 0px 50px;
+    padding-bottom: 50px;
+
+    border-bottom: solid;
+}
+
+
+.about {
+    margin:0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    padding-bottom: 50px;
+    border-bottom: solid;
+    background-color: #E8F1F2;
+    border-radius: 10px;
+}
+
+.about p {
+    height: 100%;
+    margin: 0 50px 0 50px;
+    font-size: large;
+}
+
+
+/*
+Foi utilizado textx-algin: center por motivos de estética
+*/
+@media screen and (max-width:600px) {
+    .about p {
+        text-align: center;
+    }
+}
+
