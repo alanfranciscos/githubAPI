@@ -30,7 +30,7 @@ export default function BoxResultProfile() {
         <div className={styles.window}>
             <div className={styles.box}>
                 <div className={styles.borderButton}>
-                    <h1>RESULTADO</h1>
+                    <h1 style={{color : "#eee"}}>RESULTADO</h1>
                 </div>
                 <div>
                      {/*
